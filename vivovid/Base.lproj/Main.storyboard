@@ -101,11 +101,51 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </arscnView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sNJ-d9-xvu">
+                                <rect key="frame" x="42" y="553" width="291" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BV1-FR-VrT" eventType="valueChanged" id="onK-wA-mMF"/>
+                                </connections>
+                            </slider>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YBG-lF-GJ3">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="compose" id="5vC-TD-1vk">
+                                        <connections>
+                                            <action selector="contactButtonTapped:" destination="BV1-FR-VrT" id="Wq2-bB-2tU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9x1-dW-jv5"/>
+                                    <barButtonItem systemItem="play" id="hUG-e0-a6s">
+                                        <connections>
+                                            <action selector="playPauseTapped:" destination="BV1-FR-VrT" id="9xo-zx-h3W"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hY2-qQ-FU5"/>
+                                    <barButtonItem systemItem="action" id="pZZ-wo-glk">
+                                        <connections>
+                                            <action selector="shareButtonTapped:" destination="BV1-FR-VrT" id="eM1-O8-oPf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:00 / 0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuR-Tx-YKn">
+                                <rect key="frame" x="140" y="590" width="94" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hx-GH-8Ad">
-                                <rect key="frame" x="138" y="501" width="98" height="50"/>
+                                <rect key="frame" x="134" y="432" width="107" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Learn More"/>
+                                <connections>
+                                    <action selector="moreInfoTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="2gy-0X-If3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -119,6 +159,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="now showing..." id="v9d-hE-Drr"/>
                     <connections>
+                        <outlet property="playerSlider" destination="sNJ-d9-xvu" id="0b3-Lq-Pzr"/>
+                        <outlet property="playerTimeLabel" destination="YuR-Tx-YKn" id="bWt-aC-WyZ"/>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
                     </connections>
                 </viewController>
