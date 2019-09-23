@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  vivovid
 //
 //  Created by Jan Cho on 9/23/19.
@@ -8,9 +8,12 @@
 
 import UIKit
 import SceneKit
+import SpriteKit
 import ARKit
+import AVKit
+import MessageUI
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class MainViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     
