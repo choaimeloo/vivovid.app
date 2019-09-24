@@ -86,14 +86,14 @@ class MainViewController: UIViewController, ARSCNViewDelegate, MFMailComposeView
         
         // Pause the view's session
         sceneView.session.pause()
-        player.pause()
+        player?.pause()
     }
 
     
 // MARK: - Time Tracking Functions
     
     private func seekToTime(_ seekTime: CMTime) {
-        self.player.seek(to: seekTime)
+        self.player?.seek(to: seekTime)
     }
 
     private func setTextLabel(cmtime: CMTime) -> UILabel {
@@ -189,11 +189,17 @@ class MainViewController: UIViewController, ARSCNViewDelegate, MFMailComposeView
         return node
     }
     
+    // ***TODO: Change to if let/guard let statements for player object
     
     @IBAction func playPauseTapped(_ sender: UIBarButtonItem) {
-        if player.timeControlStatus == .playing {
+        if player == nil {
+            let alertController = UIAlertController(title: "No Card in View", message: "Find a Card to Start Watching", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else if player?.timeControlStatus == .playing {
             player.pause()
-        } else if player.timeControlStatus == .paused {
+        } else if player?.timeControlStatus == .paused {
             player.play()
         }
     }
