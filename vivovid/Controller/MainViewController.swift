@@ -13,6 +13,8 @@ import ARKit
 import AVKit
 import MessageUI
 
+// MARK: - Time Tracker Extensions
+
 extension CMTime {
     var asDouble: Double {
         get {
@@ -44,16 +46,11 @@ class MainViewController: UIViewController, ARSCNViewDelegate, MFMailComposeView
     
     @IBOutlet weak var playerTimeLabel: UILabel!
     
-    let videoScene = SKScene(size: CGSize(width: 480, height: 360))
-    var configuration = ARImageTrackingConfiguration()
-    let node = SCNNode()
-    var videoURL: URL!
+    let configuration = ARImageTrackingConfiguration()
     var player: AVQueuePlayer!
     var playerItem: AVPlayerItem!
-    var isPlaying: Bool = true
-    var videoStarted: Bool = false
     var duration: CMTime = CMTime(seconds: 0, preferredTimescale: 100)
-    var periodicTimeObserver: Any?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,15 +61,11 @@ class MainViewController: UIViewController, ARSCNViewDelegate, MFMailComposeView
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
-        videoURL = Bundle.main.url(forResource: "HubSpot-AboutUs.mp4", withExtension: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Create a session configuration
-        configuration = ARImageTrackingConfiguration()
-        
+                
         // Find images to track
         if let trackedImages = ARReferenceImage.referenceImages(inGroupNamed: "Cards", bundle: Bundle.main)
             {
@@ -88,34 +81,35 @@ class MainViewController: UIViewController, ARSCNViewDelegate, MFMailComposeView
     }
     
     
-    private func seekToTime(_ seekTime: CMTime) {
-        self.player?.seek(to: seekTime)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Pause the view's session
+        sceneView.session.pause()
+        player.pause()
     }
+
     
+// MARK: - Time Tracking Functions
+    
+    private func seekToTime(_ seekTime: CMTime) {
+        self.player.seek(to: seekTime)
+    }
+
     private func setTextLabel(cmtime: CMTime) -> UILabel {
         let label = UILabel()
         label.text = cmtime.description
         return label
     }
     
-    
     @IBAction func sliderValueChanged(_ sender: Any) {
-        
+
         let seekTime = CMTime(seconds: Double(playerSlider.value) * self.duration.asDouble, preferredTimescale: 100)
         self.seekToTime(seekTime)
     }
-    
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // Pause the view's session
-        sceneView.session.pause()
-        player?.pause()
-    }
 
-    // MARK: - ARSCNViewDelegate
     
+        // MARK: - ARSCNViewDelegate
 /*
     // Override to create and configure nodes for anchors added to the view's session.
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
@@ -126,34 +120,38 @@ class MainViewController: UIViewController, ARSCNViewDelegate, MFMailComposeView
 */
     
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+        
+        let node = SCNNode()
+        let videoURL = Bundle.main.url(forResource: "HubSpot.mp4", withExtension: nil)!
+        
         // imageAnchor is the business card or other collateral
         if let imageAnchor = anchor as? ARImageAnchor {
+            
+            // Initialize media asset to be played
             let asset = AVAsset(url: videoURL)
-            
             playerItem = AVPlayerItem(asset: asset)
-            
             player = AVQueuePlayer(playerItem: playerItem)
-            
             let videoNode = SKVideoNode(avPlayer: player)
             
+            // Get duration of asset
             duration = self.player?.currentItem?.asset.duration ?? CMTime(value: 0, timescale: 100)
             print("DURATION: \(duration)")
-            
-            // Register time observer
-            periodicTimeObserver = player!.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 100), queue: DispatchQueue?.none, using: { (cmtime) in
+
+            // Register periodic time observer
+            player.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 100), queue: DispatchQueue?.none, using: { (cmtime) in
+                
                 self.playerSlider.value = Float(CMTimeGetSeconds(cmtime)) / Float(CMTimeGetSeconds(self.duration))
                 print(self.playerSlider.value)
-                
+
                 self.playerTimeLabel.text = "\(cmtime.description) / \(self.duration)"
             })
             
             player.play()
-            isPlaying = true
             
-            // the videoNode is a SpriteKit video node and we need to add that to a SceneKit element (SCNPlane below) so we can place the SceneKit element into our Scene View session. To do that, we need to create a new scene:
-            // the CGSize is an estimation (480p x 360p in resolution)
             
+            // Place SKVideoNode on SCNPlane and render into Scene View session.
             // Change videoNode's position relative to its parent. Set parameters to display dead center.
+            let videoScene = SKScene(size: CGSize(width: 480, height: 360))
             
             videoNode.position = CGPoint(x: videoScene.size.width / 2, y: videoScene.size.height / 2)
             
@@ -178,12 +176,12 @@ class MainViewController: UIViewController, ARSCNViewDelegate, MFMailComposeView
             
             node.addChildNode(planeNode)
             
+            // Handle when player reaches end of item/asset
             NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: self.playerItem, queue: nil) { [weak self] _ in
-                self?.playerItem?.seek(to: CMTime.zero, completionHandler: nil)
+                self?.playerItem.seek(to: CMTime.zero, completionHandler: nil)
                 videoNode.removeFromParent()
                 planeNode.removeFromParentNode()
                 self?.sceneView.session.run((self?.configuration ?? nil)!, options: [.resetTracking, .removeExistingAnchors])
-                
             }
             
         }
@@ -191,32 +189,17 @@ class MainViewController: UIViewController, ARSCNViewDelegate, MFMailComposeView
         return node
     }
     
-    // Hold pause state even if anchorImage is removed from and then returned to SCNView
-    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        if !isPlaying {
-            player?.pause()
+    
+    @IBAction func playPauseTapped(_ sender: UIBarButtonItem) {
+        if player.timeControlStatus == .playing {
+            player.pause()
+        } else if player.timeControlStatus == .paused {
+            player.play()
         }
     }
     
     
-    @IBAction func playPauseTapped(_ sender: UIBarButtonItem) {
-        if isPlaying && videoStarted == false {
-               let alertController = UIAlertController(title: "No Card in View", message: "Find a Card to Start Watching", preferredStyle: .alert)
-               let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-               alertController.addAction(defaultAction)
-               self.present(alertController, animated: true, completion: nil)
-               
-           } else if isPlaying && videoStarted == true {
-               player.pause()
-               //            sender.setBackgroundImage(UIImage(named: "play-pause-circle")!, for: UIControl.State.normal, barMetrics: .default)
-               isPlaying = false
-               
-           } else {
-               player?.play()
-               isPlaying = true
-           }
-    }
-    
+    // MARK: - IBActions
     
     @IBAction func moreInfoTapped(_ sender: UIButton) {
         if let url = NSURL(string: "http://www.hubspot.com") {
@@ -234,12 +217,7 @@ class MainViewController: UIViewController, ARSCNViewDelegate, MFMailComposeView
         
         activityVC.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
             
-            // Note: behavior of native Messages & Mail apps is different from the other share options. Those two apps do not deallocate (is that the right term?) the current AVPlayer instance and instead create another one "on top" so you have multiple audio streams playing at the same time.
-            if activityType == .message || activityType == .mail {
-                self.player?.removeAllItems()
-            } else {
-                self.player?.pause()
-            }
+            activityVC.dismiss(animated: true, completion: nil)
 
         }
         
@@ -261,7 +239,7 @@ class MainViewController: UIViewController, ARSCNViewDelegate, MFMailComposeView
             print("couldn't send email")
             
             // show failure alert
-            let alert = UIAlertController(title: "email error alert", message: "Email was not sent. Please try again.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Email Error", message: "Email was not sent. Please try again.", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "default action"), style:. default, handler: { _ in NSLog("The \"OK\" alert occurred.") }))
             
@@ -271,13 +249,9 @@ class MainViewController: UIViewController, ARSCNViewDelegate, MFMailComposeView
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         
-        player?.pause()
-        player?.removeAllItems()
-        
         controller.dismiss(animated: true, completion: nil)
         
     }
-    
     
     
     func session(_ session: ARSession, didFailWithError error: Error) {

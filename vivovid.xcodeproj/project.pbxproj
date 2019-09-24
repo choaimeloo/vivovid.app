@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		503C5C202339FCA400B2FEF6 /* hubspot.mov in Resources */ = {isa = PBXBuildFile; fileRef = 503C5C1F2339FCA400B2FEF6 /* hubspot.mov */; };
+		503C5C222339FD4000B2FEF6 /* HubSpot.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 503C5C212339FD4000B2FEF6 /* HubSpot.mp4 */; };
 		5041AFDD2338C89F00282118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5041AFDC2338C89F00282118 /* AppDelegate.swift */; };
 		5041AFDF2338C89F00282118 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 5041AFDE2338C89F00282118 /* art.scnassets */; };
 		5041AFE12338C89F00282118 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5041AFE02338C89F00282118 /* MainViewController.swift */; };
@@ -16,10 +18,11 @@
 		507CA6F92338CCDC00A83FCD /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CA6F82338CCDC00A83FCD /* WelcomeViewController.swift */; };
 		507CA6FC2338CD1200A83FCD /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CA6FB2338CD1200A83FCD /* SignupViewController.swift */; };
 		507CA6FE2338CD2F00A83FCD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CA6FD2338CD2F00A83FCD /* LoginViewController.swift */; };
-		50B60C502338F7B00074B5C9 /* HubSpot-AboutUs.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 50B60C4F2338F7B00074B5C9 /* HubSpot-AboutUs.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		503C5C1F2339FCA400B2FEF6 /* hubspot.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = hubspot.mov; sourceTree = "<group>"; };
+		503C5C212339FD4000B2FEF6 /* HubSpot.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = HubSpot.mp4; sourceTree = "<group>"; };
 		5041AFD92338C89F00282118 /* vivovid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vivovid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5041AFDC2338C89F00282118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5041AFDE2338C89F00282118 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -31,7 +34,6 @@
 		507CA6F82338CCDC00A83FCD /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		507CA6FB2338CD1200A83FCD /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		507CA6FD2338CD2F00A83FCD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		50B60C4F2338F7B00074B5C9 /* HubSpot-AboutUs.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HubSpot-AboutUs.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +66,10 @@
 		5041AFDB2338C89F00282118 /* vivovid */ = {
 			isa = PBXGroup;
 			children = (
+				503C5C1F2339FCA400B2FEF6 /* hubspot.mov */,
+				503C5C212339FD4000B2FEF6 /* HubSpot.mp4 */,
 				5041AFE22338C89F00282118 /* Main.storyboard */,
 				5041AFE72338C8A100282118 /* LaunchScreen.storyboard */,
-				50B60C4F2338F7B00074B5C9 /* HubSpot-AboutUs.mp4 */,
 				507CA6FA2338CCF300A83FCD /* Controller */,
 				5041AFDC2338C89F00282118 /* AppDelegate.swift */,
 				5041AFDE2338C89F00282118 /* art.scnassets */,
@@ -147,8 +150,9 @@
 			files = (
 				5041AFDF2338C89F00282118 /* art.scnassets in Resources */,
 				5041AFE92338C8A100282118 /* LaunchScreen.storyboard in Resources */,
-				50B60C502338F7B00074B5C9 /* HubSpot-AboutUs.mp4 in Resources */,
 				5041AFE62338C8A100282118 /* Assets.xcassets in Resources */,
+				503C5C222339FD4000B2FEF6 /* HubSpot.mp4 in Resources */,
+				503C5C202339FCA400B2FEF6 /* hubspot.mov in Resources */,
 				5041AFE42338C89F00282118 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
