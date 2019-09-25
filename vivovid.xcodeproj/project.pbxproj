@@ -18,9 +18,12 @@
 		507CA6F92338CCDC00A83FCD /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CA6F82338CCDC00A83FCD /* WelcomeViewController.swift */; };
 		507CA6FC2338CD1200A83FCD /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CA6FB2338CD1200A83FCD /* SignupViewController.swift */; };
 		507CA6FE2338CD2F00A83FCD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CA6FD2338CD2F00A83FCD /* LoginViewController.swift */; };
+		50C251E5233B4A55007002F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50C251E4233B4A55007002F5 /* GoogleService-Info.plist */; };
+		CDBD2492982534D14D4C445F /* Pods_vivovid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8251CEE2680881CFAF827980 /* Pods_vivovid.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DC68FB498D2F867B52099BD /* Pods-vivovid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vivovid.release.xcconfig"; path = "Target Support Files/Pods-vivovid/Pods-vivovid.release.xcconfig"; sourceTree = "<group>"; };
 		503C5C1F2339FCA400B2FEF6 /* hubspot.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = hubspot.mov; sourceTree = "<group>"; };
 		503C5C212339FD4000B2FEF6 /* HubSpot.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = HubSpot.mp4; sourceTree = "<group>"; };
 		5041AFD92338C89F00282118 /* vivovid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vivovid.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +37,9 @@
 		507CA6F82338CCDC00A83FCD /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		507CA6FB2338CD1200A83FCD /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		507CA6FD2338CD2F00A83FCD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		50C251E4233B4A55007002F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7D37AFD260A1ADCBB378A78D /* Pods-vivovid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vivovid.debug.xcconfig"; path = "Target Support Files/Pods-vivovid/Pods-vivovid.debug.xcconfig"; sourceTree = "<group>"; };
+		8251CEE2680881CFAF827980 /* Pods_vivovid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vivovid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +47,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDBD2492982534D14D4C445F /* Pods_vivovid.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F83EF17FDB3424911D28C03 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7D37AFD260A1ADCBB378A78D /* Pods-vivovid.debug.xcconfig */,
+				2DC68FB498D2F867B52099BD /* Pods-vivovid.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5041AFD02338C89F00282118 = {
 			isa = PBXGroup;
 			children = (
 				5041AFDB2338C89F00282118 /* vivovid */,
 				5041AFDA2338C89F00282118 /* Products */,
+				0F83EF17FDB3424911D28C03 /* Pods */,
+				7640614D32D84BD24A040186 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +94,7 @@
 				5041AFDE2338C89F00282118 /* art.scnassets */,
 				5041AFE52338C8A100282118 /* Assets.xcassets */,
 				5041AFEA2338C8A100282118 /* Info.plist */,
+				50C251E4233B4A55007002F5 /* GoogleService-Info.plist */,
 			);
 			path = vivovid;
 			sourceTree = "<group>";
@@ -90,6 +110,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		7640614D32D84BD24A040186 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8251CEE2680881CFAF827980 /* Pods_vivovid.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -97,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5041AFED2338C8A100282118 /* Build configuration list for PBXNativeTarget "vivovid" */;
 			buildPhases = (
+				24B03BD48994DA921D1835B4 /* [CP] Check Pods Manifest.lock */,
 				5041AFD52338C89F00282118 /* Sources */,
 				5041AFD62338C89F00282118 /* Frameworks */,
 				5041AFD72338C89F00282118 /* Resources */,
+				2734DD71327F3328C1C14DAB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,12 +182,55 @@
 				5041AFE92338C8A100282118 /* LaunchScreen.storyboard in Resources */,
 				5041AFE62338C8A100282118 /* Assets.xcassets in Resources */,
 				503C5C222339FD4000B2FEF6 /* HubSpot.mp4 in Resources */,
+				50C251E5233B4A55007002F5 /* GoogleService-Info.plist in Resources */,
 				503C5C202339FCA400B2FEF6 /* hubspot.mov in Resources */,
 				5041AFE42338C89F00282118 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24B03BD48994DA921D1835B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-vivovid-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2734DD71327F3328C1C14DAB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vivovid/Pods-vivovid-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vivovid/Pods-vivovid-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-vivovid/Pods-vivovid-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5041AFD52338C89F00282118 /* Sources */ = {
@@ -310,6 +383,7 @@
 		};
 		5041AFEE2338C8A100282118 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D37AFD260A1ADCBB378A78D /* Pods-vivovid.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -328,6 +402,7 @@
 		};
 		5041AFEF2338C8A100282118 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DC68FB498D2F867B52099BD /* Pods-vivovid.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

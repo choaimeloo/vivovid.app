@@ -1,0 +1,6 @@
+framework module Pods_vivovid {
+  umbrella header "Pods-vivovid-umbrella.h"
+
+  export *
+  module * { export * }
+}
