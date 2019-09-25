@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordConfirmTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +23,26 @@ class LoginViewController: UIViewController {
     }
     
 
+    @IBAction func logInPressed(_ sender: Any) {
+        
+        // TODO: Do form validation on the email and password
+        
+        if let email = emailTextField.text, let password =
+            passwordTextField.text {
+            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+                if error != nil {
+                    print(error!)
+                } else {
+                    print("Login Successful")
+                    self.performSegue(withIdentifier: "loginToMain", sender: self)
+                }
+            }
+        }
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
+    
+    
     /*
     // MARK: - Navigation
 

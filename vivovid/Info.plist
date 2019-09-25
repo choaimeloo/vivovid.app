@@ -2,6 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Mukta-Regular.ttf</string>
+		<string>Mukta-SemiBold.ttf</string>
+		<string>Mukta-Medium.ttf</string>
+		<string>Mukta-Light.ttf</string>
+		<string>Mukta-ExtraLight.ttf</string>
+		<string>Mukta-ExtraBold.ttf</string>
+		<string>Mukta-Bold.ttf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

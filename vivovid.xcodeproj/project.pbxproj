@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,13 @@
 		507CA6F92338CCDC00A83FCD /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CA6F82338CCDC00A83FCD /* WelcomeViewController.swift */; };
 		507CA6FC2338CD1200A83FCD /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CA6FB2338CD1200A83FCD /* SignupViewController.swift */; };
 		507CA6FE2338CD2F00A83FCD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CA6FD2338CD2F00A83FCD /* LoginViewController.swift */; };
+		508AD2C9233BBEAD00FB78C7 /* Mukta-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A52C233BAD4C0067D62A /* Mukta-Regular.ttf */; };
+		508AD2CA233BBEB100FB78C7 /* Mukta-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A530233BAD4C0067D62A /* Mukta-Medium.ttf */; };
+		508AD2CB233BBEB400FB78C7 /* Mukta-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A52D233BAD4C0067D62A /* Mukta-SemiBold.ttf */; };
+		509B150C233BAFAB00632B5C /* Mukta-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A52E233BAD4C0067D62A /* Mukta-Bold.ttf */; };
+		509B150D233BAFAF00632B5C /* Mukta-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A52A233BAD4C0067D62A /* Mukta-ExtraBold.ttf */; };
+		509B150E233BAFB300632B5C /* Mukta-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A52F233BAD4C0067D62A /* Mukta-ExtraLight.ttf */; };
+		509B150F233BAFB600632B5C /* Mukta-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A52B233BAD4C0067D62A /* Mukta-Light.ttf */; };
 		50C251E5233B4A55007002F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50C251E4233B4A55007002F5 /* GoogleService-Info.plist */; };
 		CDBD2492982534D14D4C445F /* Pods_vivovid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8251CEE2680881CFAF827980 /* Pods_vivovid.framework */; };
 /* End PBXBuildFile section */
@@ -38,6 +45,13 @@
 		507CA6FB2338CD1200A83FCD /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		507CA6FD2338CD2F00A83FCD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		50C251E4233B4A55007002F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		50F7A52A233BAD4C0067D62A /* Mukta-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mukta-ExtraBold.ttf"; path = "../../../OvidApp/OvidApp/Resources/Mukta-ExtraBold.ttf"; sourceTree = "<group>"; };
+		50F7A52B233BAD4C0067D62A /* Mukta-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mukta-Light.ttf"; path = "../../../OvidApp/OvidApp/Resources/Mukta-Light.ttf"; sourceTree = "<group>"; };
+		50F7A52C233BAD4C0067D62A /* Mukta-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mukta-Regular.ttf"; path = "../../../OvidApp/OvidApp/Resources/Mukta-Regular.ttf"; sourceTree = "<group>"; };
+		50F7A52D233BAD4C0067D62A /* Mukta-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mukta-SemiBold.ttf"; path = "../../../OvidApp/OvidApp/Resources/Mukta-SemiBold.ttf"; sourceTree = "<group>"; };
+		50F7A52E233BAD4C0067D62A /* Mukta-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mukta-Bold.ttf"; path = "../../../OvidApp/OvidApp/Resources/Mukta-Bold.ttf"; sourceTree = "<group>"; };
+		50F7A52F233BAD4C0067D62A /* Mukta-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mukta-ExtraLight.ttf"; path = "../../../OvidApp/OvidApp/Resources/Mukta-ExtraLight.ttf"; sourceTree = "<group>"; };
+		50F7A530233BAD4C0067D62A /* Mukta-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mukta-Medium.ttf"; path = "../../../OvidApp/OvidApp/Resources/Mukta-Medium.ttf"; sourceTree = "<group>"; };
 		7D37AFD260A1ADCBB378A78D /* Pods-vivovid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vivovid.debug.xcconfig"; path = "Target Support Files/Pods-vivovid/Pods-vivovid.debug.xcconfig"; sourceTree = "<group>"; };
 		8251CEE2680881CFAF827980 /* Pods_vivovid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vivovid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -60,7 +74,6 @@
 				7D37AFD260A1ADCBB378A78D /* Pods-vivovid.debug.xcconfig */,
 				2DC68FB498D2F867B52099BD /* Pods-vivovid.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -85,6 +98,7 @@
 		5041AFDB2338C89F00282118 /* vivovid */ = {
 			isa = PBXGroup;
 			children = (
+				50F7A529233BAD1B0067D62A /* Resources */,
 				503C5C1F2339FCA400B2FEF6 /* hubspot.mov */,
 				503C5C212339FD4000B2FEF6 /* HubSpot.mp4 */,
 				5041AFE22338C89F00282118 /* Main.storyboard */,
@@ -109,6 +123,21 @@
 			);
 			path = Controller;
 			sourceTree = "<group>";
+		};
+		50F7A529233BAD1B0067D62A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				50F7A52E233BAD4C0067D62A /* Mukta-Bold.ttf */,
+				50F7A52A233BAD4C0067D62A /* Mukta-ExtraBold.ttf */,
+				50F7A52F233BAD4C0067D62A /* Mukta-ExtraLight.ttf */,
+				50F7A52B233BAD4C0067D62A /* Mukta-Light.ttf */,
+				50F7A530233BAD4C0067D62A /* Mukta-Medium.ttf */,
+				50F7A52C233BAD4C0067D62A /* Mukta-Regular.ttf */,
+				50F7A52D233BAD4C0067D62A /* Mukta-SemiBold.ttf */,
+			);
+			name = Resources;
+			path = "/Users/JanCho/Desktop/iOS App Development/vivovid/vivovid/New Group";
+			sourceTree = "<absolute>";
 		};
 		7640614D32D84BD24A040186 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -179,11 +208,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5041AFDF2338C89F00282118 /* art.scnassets in Resources */,
+				509B150D233BAFAF00632B5C /* Mukta-ExtraBold.ttf in Resources */,
+				508AD2C9233BBEAD00FB78C7 /* Mukta-Regular.ttf in Resources */,
 				5041AFE92338C8A100282118 /* LaunchScreen.storyboard in Resources */,
+				509B150E233BAFB300632B5C /* Mukta-ExtraLight.ttf in Resources */,
+				509B150C233BAFAB00632B5C /* Mukta-Bold.ttf in Resources */,
 				5041AFE62338C8A100282118 /* Assets.xcassets in Resources */,
+				509B150F233BAFB600632B5C /* Mukta-Light.ttf in Resources */,
 				503C5C222339FD4000B2FEF6 /* HubSpot.mp4 in Resources */,
 				50C251E5233B4A55007002F5 /* GoogleService-Info.plist in Resources */,
+				508AD2CB233BBEB400FB78C7 /* Mukta-SemiBold.ttf in Resources */,
 				503C5C202339FCA400B2FEF6 /* hubspot.mov in Resources */,
+				508AD2CA233BBEB100FB78C7 /* Mukta-Medium.ttf in Resources */,
 				5041AFE42338C89F00282118 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

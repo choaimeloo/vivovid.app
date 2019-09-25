@@ -8,5 +8,6 @@ target 'vivovid' do
   # Pods for vivovid
 
 pod 'Firebase/Analytics'
+pod 'Firebase/Auth'
 
 end
