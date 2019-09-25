@@ -65,7 +65,7 @@ class MainViewController: UIViewController, ARSCNViewDelegate, MFMailComposeView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-                
+
         // Find images to track
         if let trackedImages = ARReferenceImage.referenceImages(inGroupNamed: "Cards", bundle: Bundle.main)
             {
@@ -79,7 +79,6 @@ class MainViewController: UIViewController, ARSCNViewDelegate, MFMailComposeView
         // Run the view's session
         sceneView.session.run(configuration)
     }
-    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -103,7 +102,6 @@ class MainViewController: UIViewController, ARSCNViewDelegate, MFMailComposeView
     }
     
     @IBAction func sliderValueChanged(_ sender: Any) {
-
         let seekTime = CMTime(seconds: Double(playerSlider.value) * self.duration.asDouble, preferredTimescale: 100)
         self.seekToTime(seekTime)
     }
@@ -189,7 +187,7 @@ class MainViewController: UIViewController, ARSCNViewDelegate, MFMailComposeView
         return node
     }
     
-    // ***TODO: Change to if let/guard let statements for player object
+    // ***TODO: Change to if/guard let statements for player object
     
     @IBAction func playPauseTapped(_ sender: UIBarButtonItem) {
         if player == nil {
@@ -197,15 +195,17 @@ class MainViewController: UIViewController, ARSCNViewDelegate, MFMailComposeView
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
+            
         } else if player?.timeControlStatus == .playing {
             player.pause()
+            
         } else if player?.timeControlStatus == .paused {
             player.play()
         }
     }
     
     
-    // MARK: - IBActions
+    // MARK: - IBActions for User Engagement
     
     @IBAction func moreInfoTapped(_ sender: UIButton) {
         if let url = NSURL(string: "http://www.hubspot.com") {
@@ -214,24 +214,7 @@ class MainViewController: UIViewController, ARSCNViewDelegate, MFMailComposeView
     }
     
     
-    @IBAction func shareButtonTapped(_ sender: UIBarButtonItem) {
-        let items: [Any] = ["You should watch this video:", URL(string: "https://hubspot.hubs.vidyard.com/watch/Jgw4cuRZkXyuxZ3hQnoMAv?")!]
-            
-        let activityVC = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        
-        present(activityVC, animated: true)
-        
-        activityVC.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
-            
-            activityVC.dismiss(animated: true, completion: nil)
-
-        }
-        
-    }
-    
-    
     @IBAction func contactButtonTapped(_ sender: UIBarButtonItem) {
-        
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
@@ -257,6 +240,20 @@ class MainViewController: UIViewController, ARSCNViewDelegate, MFMailComposeView
         
         controller.dismiss(animated: true, completion: nil)
         
+    }
+    
+    
+    @IBAction func shareButtonTapped(_ sender: UIBarButtonItem) {
+        let items: [Any] = ["You should watch this video:", URL(string: "https://hubspot.hubs.vidyard.com/watch/Jgw4cuRZkXyuxZ3hQnoMAv?")!]
+            
+        let activityVC = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        
+        present(activityVC, animated: true)
+        
+        activityVC.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
+            
+            activityVC.dismiss(animated: true, completion: nil)
+        }
     }
     
     
