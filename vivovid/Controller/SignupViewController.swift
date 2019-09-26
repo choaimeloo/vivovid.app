@@ -39,7 +39,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                     print(error!)
                 } else {
                     print("Signup Successful")
-                    self.performSegue(withIdentifier: "signupToMain", sender: self)
+                    self.performSegue(withIdentifier: "signupToUploads", sender: self)
                 }
             }
         }

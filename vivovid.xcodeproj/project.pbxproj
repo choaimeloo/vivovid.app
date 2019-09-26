@@ -15,6 +15,7 @@
 		5041AFE42338C89F00282118 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5041AFE22338C89F00282118 /* Main.storyboard */; };
 		5041AFE62338C8A100282118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5041AFE52338C8A100282118 /* Assets.xcassets */; };
 		5041AFE92338C8A100282118 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5041AFE72338C8A100282118 /* LaunchScreen.storyboard */; };
+		5057E490233CE5C500DDD165 /* UploadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5057E48F233CE5C500DDD165 /* UploadsViewController.swift */; };
 		507CA6F92338CCDC00A83FCD /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CA6F82338CCDC00A83FCD /* WelcomeViewController.swift */; };
 		507CA6FC2338CD1200A83FCD /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CA6FB2338CD1200A83FCD /* SignupViewController.swift */; };
 		507CA6FE2338CD2F00A83FCD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CA6FD2338CD2F00A83FCD /* LoginViewController.swift */; };
@@ -41,6 +42,7 @@
 		5041AFE52338C8A100282118 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5041AFE82338C8A100282118 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5041AFEA2338C8A100282118 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5057E48F233CE5C500DDD165 /* UploadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadsViewController.swift; sourceTree = "<group>"; };
 		507CA6F82338CCDC00A83FCD /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		507CA6FB2338CD1200A83FCD /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		507CA6FD2338CD2F00A83FCD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				5041AFE02338C89F00282118 /* MainViewController.swift */,
 				507CA6FB2338CD1200A83FCD /* SignupViewController.swift */,
 				507CA6FD2338CD2F00A83FCD /* LoginViewController.swift */,
+				5057E48F233CE5C500DDD165 /* UploadsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				507CA6F92338CCDC00A83FCD /* WelcomeViewController.swift in Sources */,
 				5041AFE12338C89F00282118 /* MainViewController.swift in Sources */,
 				5041AFDD2338C89F00282118 /* AppDelegate.swift in Sources */,
+				5057E490233CE5C500DDD165 /* UploadsViewController.swift in Sources */,
 				507CA6FE2338CD2F00A83FCD /* LoginViewController.swift in Sources */,
 				507CA6FC2338CD1200A83FCD /* SignupViewController.swift in Sources */,
 			);

@@ -37,7 +37,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     print(error!)
                 } else {
                     print("Login Successful")
-                    self.performSegue(withIdentifier: "loginToMain", sender: self)
+                    self.performSegue(withIdentifier: "loginToUploads", sender: self)
                 }
             }
         }
