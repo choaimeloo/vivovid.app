@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -22,13 +22,16 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    @IBAction func logInPressed(_ sender: Any) {
-        
-        // TODO: Do form validation on the email and password
-        
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+    
+    // TODO: Form validation on the email and password
+    func logInWithEmail() {
         if let email = emailTextField.text, let password =
             passwordTextField.text {
+            
             Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
                 if error != nil {
                     print(error!)
@@ -38,8 +41,30 @@ class LoginViewController: UIViewController {
                 }
             }
         }
-        emailTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
+    }
+    
+    // Set up responder chain for email & password textfields
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField.returnKeyType == .next {
+            let nextTag = textField.tag + 1
+            if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+                nextResponder.becomeFirstResponder()
+            } else {
+                textField.resignFirstResponder()
+            }
+            return true
+        } else if textField.returnKeyType == .go {
+            logInWithEmail()
+            textField.resignFirstResponder()
+            return true
+        }
+        return false
+    }
+        
+    
+    @IBAction func logInPressed(_ sender: Any) {
+        logInWithEmail()
     }
     
     

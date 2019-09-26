@@ -18,13 +18,13 @@
 		507CA6F92338CCDC00A83FCD /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CA6F82338CCDC00A83FCD /* WelcomeViewController.swift */; };
 		507CA6FC2338CD1200A83FCD /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CA6FB2338CD1200A83FCD /* SignupViewController.swift */; };
 		507CA6FE2338CD2F00A83FCD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CA6FD2338CD2F00A83FCD /* LoginViewController.swift */; };
-		508AD2C9233BBEAD00FB78C7 /* Mukta-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A52C233BAD4C0067D62A /* Mukta-Regular.ttf */; };
-		508AD2CA233BBEB100FB78C7 /* Mukta-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A530233BAD4C0067D62A /* Mukta-Medium.ttf */; };
-		508AD2CB233BBEB400FB78C7 /* Mukta-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A52D233BAD4C0067D62A /* Mukta-SemiBold.ttf */; };
-		509B150C233BAFAB00632B5C /* Mukta-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A52E233BAD4C0067D62A /* Mukta-Bold.ttf */; };
+		508AD2D0233CA90700FB78C7 /* Mukta-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A52C233BAD4C0067D62A /* Mukta-Regular.ttf */; };
+		508AD2D1233CA90A00FB78C7 /* Mukta-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A52D233BAD4C0067D62A /* Mukta-SemiBold.ttf */; };
+		508AD2D2233CA90F00FB78C7 /* Mukta-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A530233BAD4C0067D62A /* Mukta-Medium.ttf */; };
+		508AD2D3233CA91200FB78C7 /* Mukta-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A52B233BAD4C0067D62A /* Mukta-Light.ttf */; };
+		508AD2D4233CA91A00FB78C7 /* Mukta-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A52E233BAD4C0067D62A /* Mukta-Bold.ttf */; };
 		509B150D233BAFAF00632B5C /* Mukta-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A52A233BAD4C0067D62A /* Mukta-ExtraBold.ttf */; };
 		509B150E233BAFB300632B5C /* Mukta-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A52F233BAD4C0067D62A /* Mukta-ExtraLight.ttf */; };
-		509B150F233BAFB600632B5C /* Mukta-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50F7A52B233BAD4C0067D62A /* Mukta-Light.ttf */; };
 		50C251E5233B4A55007002F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50C251E4233B4A55007002F5 /* GoogleService-Info.plist */; };
 		CDBD2492982534D14D4C445F /* Pods_vivovid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8251CEE2680881CFAF827980 /* Pods_vivovid.framework */; };
 /* End PBXBuildFile section */
@@ -150,9 +150,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5041AFD82338C89F00282118 /* vivovid */ = {
+		5041AFD82338C89F00282118 /* vivOvid */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5041AFED2338C8A100282118 /* Build configuration list for PBXNativeTarget "vivovid" */;
+			buildConfigurationList = 5041AFED2338C8A100282118 /* Build configuration list for PBXNativeTarget "vivOvid" */;
 			buildPhases = (
 				24B03BD48994DA921D1835B4 /* [CP] Check Pods Manifest.lock */,
 				5041AFD52338C89F00282118 /* Sources */,
@@ -164,7 +164,7 @@
 			);
 			dependencies = (
 			);
-			name = vivovid;
+			name = vivOvid;
 			productName = vivovid;
 			productReference = 5041AFD92338C89F00282118 /* vivOvid.app */;
 			productType = "com.apple.product-type.application";
@@ -197,7 +197,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5041AFD82338C89F00282118 /* vivovid */,
+				5041AFD82338C89F00282118 /* vivOvid */,
 			);
 		};
 /* End PBXProject section */
@@ -209,17 +209,17 @@
 			files = (
 				5041AFDF2338C89F00282118 /* art.scnassets in Resources */,
 				509B150D233BAFAF00632B5C /* Mukta-ExtraBold.ttf in Resources */,
-				508AD2C9233BBEAD00FB78C7 /* Mukta-Regular.ttf in Resources */,
+				508AD2D0233CA90700FB78C7 /* Mukta-Regular.ttf in Resources */,
 				5041AFE92338C8A100282118 /* LaunchScreen.storyboard in Resources */,
 				509B150E233BAFB300632B5C /* Mukta-ExtraLight.ttf in Resources */,
-				509B150C233BAFAB00632B5C /* Mukta-Bold.ttf in Resources */,
 				5041AFE62338C8A100282118 /* Assets.xcassets in Resources */,
-				509B150F233BAFB600632B5C /* Mukta-Light.ttf in Resources */,
 				503C5C222339FD4000B2FEF6 /* HubSpot.mp4 in Resources */,
 				50C251E5233B4A55007002F5 /* GoogleService-Info.plist in Resources */,
-				508AD2CB233BBEB400FB78C7 /* Mukta-SemiBold.ttf in Resources */,
+				508AD2D4233CA91A00FB78C7 /* Mukta-Bold.ttf in Resources */,
+				508AD2D1233CA90A00FB78C7 /* Mukta-SemiBold.ttf in Resources */,
+				508AD2D3233CA91200FB78C7 /* Mukta-Light.ttf in Resources */,
 				503C5C202339FCA400B2FEF6 /* hubspot.mov in Resources */,
-				508AD2CA233BBEB100FB78C7 /* Mukta-Medium.ttf in Resources */,
+				508AD2D2233CA90F00FB78C7 /* Mukta-Medium.ttf in Resources */,
 				5041AFE42338C89F00282118 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,7 +467,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5041AFED2338C8A100282118 /* Build configuration list for PBXNativeTarget "vivovid" */ = {
+		5041AFED2338C8A100282118 /* Build configuration list for PBXNativeTarget "vivOvid" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5041AFEE2338C8A100282118 /* Debug */,

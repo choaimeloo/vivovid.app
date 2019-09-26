@@ -29,6 +29,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     // Create & authenticate new user in Firebase
+    
+    // TODO: Do form validation on the email and password
     func createUserWithEmail() {
         if let email = emailTextField.text, let password = passwordTextField.text {
             
