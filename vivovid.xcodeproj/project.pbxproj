@@ -33,7 +33,7 @@
 		2DC68FB498D2F867B52099BD /* Pods-vivovid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vivovid.release.xcconfig"; path = "Target Support Files/Pods-vivovid/Pods-vivovid.release.xcconfig"; sourceTree = "<group>"; };
 		503C5C1F2339FCA400B2FEF6 /* hubspot.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = hubspot.mov; sourceTree = "<group>"; };
 		503C5C212339FD4000B2FEF6 /* HubSpot.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = HubSpot.mp4; sourceTree = "<group>"; };
-		5041AFD92338C89F00282118 /* vivovid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vivovid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5041AFD92338C89F00282118 /* vivOvid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vivOvid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5041AFDC2338C89F00282118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5041AFDE2338C89F00282118 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		5041AFE02338C89F00282118 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		5041AFDA2338C89F00282118 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5041AFD92338C89F00282118 /* vivovid.app */,
+				5041AFD92338C89F00282118 /* vivOvid.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 			);
 			name = vivovid;
 			productName = vivovid;
-			productReference = 5041AFD92338C89F00282118 /* vivovid.app */;
+			productReference = 5041AFD92338C89F00282118 /* vivOvid.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -430,7 +430,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.janwcho.vivovid;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = vivOvid;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -449,7 +449,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.janwcho.vivovid;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = vivOvid;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

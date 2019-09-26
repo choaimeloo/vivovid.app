@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -20,22 +20,16 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let nextTag = textField.tag + 1
-        
-        if let nextResponder = textField.superview?.viewWithTag(nextTag) {
-            nextResponder.becomeFirstResponder()
-        } else {
-            textField.resignFirstResponder()
-        }
-        return true
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
     }
-        
     
-    @IBAction func signupEmailPressed(_ sender: Any) {
-        
+    // Create & authenticate new user in Firebase
+    func createUserWithEmail() {
         if let email = emailTextField.text, let password = passwordTextField.text {
             
             Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
@@ -47,8 +41,30 @@ class SignupViewController: UIViewController {
                 }
             }
         }
-//        emailTextField.resignFirstResponder()
-//        passwordTextField.resignFirstResponder()
+    }
+    
+    // Set up responder chain for email & password text fields
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField.returnKeyType == .next {
+            let nextTag = textField.tag + 1
+            if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+                nextResponder.becomeFirstResponder()
+            } else {
+                textField.resignFirstResponder()
+            }
+            return true
+        } else if textField.returnKeyType == .go {
+            createUserWithEmail()
+            textField.resignFirstResponder()
+            return true
+        }
+        return false
+    }
+        
+    // Signup with email and password
+    @IBAction func signupEmailPressed(_ sender: Any) {
+        createUserWithEmail()
     }
     
     
