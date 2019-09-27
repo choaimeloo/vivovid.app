@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_vivovid : NSObject
+@interface PodsDummy_Pods_vivOvid : NSObject
 @end
-@implementation PodsDummy_Pods_vivovid
+@implementation PodsDummy_Pods_vivOvid
 @end

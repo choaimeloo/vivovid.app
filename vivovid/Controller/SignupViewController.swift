@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class SignupViewController: UIViewController, UITextFieldDelegate {
 
@@ -15,12 +16,16 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmTextField: UITextField!
     
+    @IBOutlet weak var googleSignUpButton: GIDSignInButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+       GIDSignIn.sharedInstance()?.presentingViewController = self
+       
+       // Automatically sign in the user.
+       GIDSignIn.sharedInstance()?.restorePreviousSignIn()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3F85D981A8087B68DAF481D100F56918"
-               BuildableName = "Pods_vivovid.framework"
-               BlueprintName = "Pods-vivovid"
+               BlueprintIdentifier = "09CC0F6D95DCCB12CEC76F683CF33731"
+               BuildableName = "Pods_vivOvid.framework"
+               BlueprintName = "Pods-vivOvid"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_vivovidVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_vivovidVersionString[];
+FOUNDATION_EXPORT double Pods_vivOvidVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_vivOvidVersionString[];
 
