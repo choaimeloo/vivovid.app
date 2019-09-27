@@ -8,8 +8,10 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class UploadsViewController: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,16 +19,22 @@ class UploadsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
     @IBAction func signOutPressed(_ sender: Any) {
         // Google signout
-        // GIDSignIn.sharedInstance()?.signOut()
-        // refreshInterface()
+         GIDSignIn.sharedInstance()?.signOut()
         
         // Firebase signout
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
-            print("You're Signed Out!")
+            print("You've Signed Out")
+            let alertController = UIAlertController(title: "You've Signed Out", message: nil, preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
+                self.performSegue(withIdentifier: "uploadsToWelcome", sender: self)
+            }
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
         }

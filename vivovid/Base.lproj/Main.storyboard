@@ -20,7 +20,7 @@
             <objects>
                 <viewController title="WelcomeViewController" id="q0n-fl-hyz" customClass="WelcomeViewController" customModule="vivOvid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dsQ-iy-hhB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="neon-albert-einstein" translatesAutoresizingMaskIntoConstraints="NO" id="vm3-ZX-xny">
@@ -416,6 +416,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOutPressed:" destination="ubd-Xs-BmL" eventType="touchUpInside" id="sY5-A4-TLQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ca-5B-6Ja">
                                 <rect key="frame" x="99" y="474" width="178" height="69"/>
@@ -426,7 +429,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="signOutPressed:" destination="ubd-Xs-BmL" eventType="touchUpInside" id="5x1-Va-XpW"/>
                                     <segue destination="BV1-FR-VrT" kind="show" identifier="uploadsToMain" id="sE2-5a-UgA"/>
                                 </connections>
                             </button>
@@ -435,6 +437,9 @@
                         <viewLayoutGuide key="safeArea" id="Z8V-fC-GBP"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZdA-JL-xES"/>
+                    <connections>
+                        <segue destination="q0n-fl-hyz" kind="show" identifier="uploadsToWelcome" id="hkJ-bg-ZjB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nge-87-7pc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -450,5 +455,6 @@
         <segue reference="ZkN-Gh-3Ae"/>
         <segue reference="sE2-5a-UgA"/>
         <segue reference="7yt-oW-D6B"/>
+        <segue reference="hkJ-bg-ZjB"/>
     </inferredMetricsTieBreakers>
 </document>
