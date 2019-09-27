@@ -181,7 +181,7 @@
         <!--MainViewController-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController title="MainViewController" id="BV1-FR-VrT" customClass="MainViewController" customModule="vivOvid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" title="MainViewController" id="BV1-FR-VrT" customClass="MainViewController" customModule="vivOvid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -382,7 +382,7 @@
         <!--Uploads View Controller-->
         <scene sceneID="w0c-WQ-3Uh">
             <objects>
-                <viewController id="ubd-Xs-BmL" customClass="UploadsViewController" customModule="vivOvid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UploadsViewController" id="ubd-Xs-BmL" customClass="UploadsViewController" customModule="vivOvid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jyg-mF-C2T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -446,7 +446,7 @@
         <image name="playpause.fill" catalog="system" width="64" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Tqm-4q-S8e"/>
+        <segue reference="ZaT-M8-bKU"/>
         <segue reference="ZkN-Gh-3Ae"/>
         <segue reference="sE2-5a-UgA"/>
         <segue reference="7yt-oW-D6B"/>

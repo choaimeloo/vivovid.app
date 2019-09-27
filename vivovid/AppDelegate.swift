@@ -47,6 +47,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                     print(result?.user.displayName ?? "Username missing")
                 }
             }
+            
+            // Make segue to UploadsViewController (from Signup or Login) after Google SignIn is validated
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController: UIViewController = storyboard.instantiateViewController(withIdentifier: "UploadsViewController")
+            
+            let rootViewController = self.window!.rootViewController as! UINavigationController
+            rootViewController.pushViewController(viewController, animated: true)
         }
     }
     
